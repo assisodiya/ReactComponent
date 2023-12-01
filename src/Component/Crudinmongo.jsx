@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Button, Input } from 'reactstrap'
 
 export default function Crudinmongo() {
     const [items, setitems]=useState('')
@@ -97,19 +98,19 @@ const Deletedatabyname = () => {
 
      <input type='text' value={items} onChange={(e)=>inputChangehandel(e)}/><br/>
      <input type='number' value={number} onChange={(e)=>setnumber(e.target.value)}/><br/>
-      <button onClick={saveDataInMongo}>Save Items</button><br/>
+      <Button onClick={saveDataInMongo}>Save Items</Button><br/>
      
       {allitems.map((item, index) => (
           <li key={index}><b>{item.number} {item.items}</b></li>
         ))}
      <input type='text' value={itemsfordeleting} onChange={(e)=>itemsfordelete(e)}/><br/>
-     <button onClick={Deletedatabyname}>Delete Data by name</button><br/>
+     <Button onClick={Deletedatabyname}>Delete Data by name</Button><br/>
 
 
      <div>
-        <input type='text' value={updatevalue} placeholder='Enter New Value' onChange={(e)=>setupdatevalue(e.target.valaue)}/><br/>
-        <input type='text' value={updatenumber} onChange={(e)=>setupdatenumber(e.target.valaue)}/><br/>
-        <button onClick={updatedatabyNumber}>Update By Number</button>
+        <Input type='text' value={updatevalue} placeholder='Enter New Value' onChange={(e)=>setupdatevalue(e.target.valaue)}/><br/>
+        <Input type='text' value={updatenumber} onChange={(e)=>setupdatenumber(e.target.valaue)}/><br/>
+        <Button onClick={updatedatabyNumber}>Update By Number</Button>
      </div>
     </div>
   )
